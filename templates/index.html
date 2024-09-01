@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Biolink</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Biolink</h1>
+    </header>
+    <main>
+        {% if user %}
+            <p>Hola, {{ user.username }}!</p>
+            <p>Tu ID de usuario es: {{ user.id }}</p>
+        {% else %}
+            <p>Por favor, <a href="{{ url_for('discord.login') }}">inicia sesión con Discord</a>.</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>© 2024 Mi Biolink</p>
+    </footer>
+</body>
+</html>
